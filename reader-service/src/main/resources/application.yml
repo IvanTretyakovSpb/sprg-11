@@ -7,3 +7,12 @@ eureka:
 spring:
   application:
     name: reader-service
+http:
+  logging:
+    enabled: true
+    log-body: false
+    log-level: WARN
+aspect:
+  enabled: true
+  on-timer: true
+  log-level: ERROR

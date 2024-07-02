@@ -3,6 +3,7 @@ package com.tretyakov.api;
 import com.github.javafaker.Faker;
 import com.tretyakov.BookProvider;
 import com.tretyakov.ReaderProvider;
+import com.tretyakov.aspect.Timer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,11 +29,13 @@ public class IssueController {
         refreshData();
     }
 
+    @Timer
     @GetMapping
     public List<Issue> getAll() {
         return issues;
     }
 
+    @Timer
     @GetMapping("/refresh")
     public List<Issue> refresh() {
         refreshData();

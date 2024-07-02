@@ -1,7 +1,7 @@
 package com.tretyakov.api;
 
 import com.github.javafaker.Faker;
-import jakarta.annotation.PostConstruct;
+import com.tretyakov.aspect.Timer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,15 +37,16 @@ public class BookController {
         this.books = List.copyOf(books);
     }
 
+    @Timer
     @GetMapping
     public List<Book> getAll() {
         return books;
     }
 
+    @Timer
     @GetMapping("/random")
     public Book getRandom() {
         final int randomIndex = faker.number().numberBetween(0, books.size());
         return books.get(randomIndex);
     }
-
 }

@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>spring-cloud</name>
-	<description>Demo project for Spring Cloud</description>
+	<description>Demo project for custom starter</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -26,6 +26,8 @@
         <module>reader-service</module>
         <module>issue-service</module>
         <module>discovery-service</module>
+		<module>http-logger-starter</module>
+        <module>aspect-timer-starter</module>
     </modules>
     <scm>
 		<connection/>

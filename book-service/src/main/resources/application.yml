@@ -7,3 +7,15 @@ eureka:
 spring:
   application:
     name: book-service
+#logging:
+#  level:
+#    root: debug
+http:
+  logging:
+    enabled: true
+    log-body: false
+    log-level: INFO
+aspect:
+  enabled: true
+  on-timer: true
+  log-level: WARN
